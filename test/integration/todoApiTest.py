@@ -58,6 +58,8 @@ class TestApi(unittest.TestCase):
         }
         response = requests.post(url, data=json.dumps(data))
         json_response = response.json()
+        print('STATUS CODE: ' + str(response.status_code))  # debug
+        print('RESPONSE COMPLETA: ' + str(json_response))   # debug
         print('Response Add Todo: '+ json_response['body'])
         jsonbody= json.loads(json_response['body'])
         ID_TODO = jsonbody['id']
